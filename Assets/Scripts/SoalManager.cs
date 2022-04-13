@@ -76,6 +76,18 @@ public class SoalManager : MonoBehaviour
 
     }
 
+    private void checkJawaban(char huruf)
+    {
+        if (huruf.Equals(kunciJawaban))
+        {
+            print("benar");
+        }
+        else
+        {
+            print("salah");
+        }
+    }
+
     void Update()
     {
         
