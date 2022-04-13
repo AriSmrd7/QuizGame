@@ -16,3 +16,45 @@ Pecahan desimal dari 1⁄2 adalah...
 +"0,13"
 +"0,30"
 +"B"
+#Pecahan desimal dari 2/3 adalah...
+"+0,67"
+"+0,26"
+"+0,33"
+"+0,99"
+"+A"
+#Pecahan desimal dari 2/5 adalah...
+"+0,4"
+"+0,2"
+"+0,5"
+"+0,8"
+"+A"
+#Pecahan desimal dari 4/5 adalah...
+"+0,18"
+"+0,45"
+"+0,80"
+"+0,50"
+"+C"
+#Pecahan desimal dari 12/48 adalah...
+"+0,75"
+"+0,50"
+"+0,25"
+"+0,10"
+"+C"
+#Pecahan desimal dari 21/25 adalah...
+"+0,85"
+"+0,80"
+"+0,88"
+"+0,84"
+"+D"
+#Pecahan desimal dari 75/100 adalah...
+"+0,1705"
+"+0,25"
+"+0,75"
+"+0,100"
+"+C
+#Pecahan desimal dari 125/1000 adalah...
+"+0,125"
+"+0,1000"
+"+0,1125"
+"+0,8"
+"+A"

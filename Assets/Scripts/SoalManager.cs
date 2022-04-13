@@ -12,14 +12,26 @@ public class SoalManager : MonoBehaviour
     [SerializeField] private string[,] soalBag;
 
     public Text txtSoal, txtOpsiA, txtOpsiB, txtOpsiC, txtOpsiD;
-
+    public Text txtPenilaian;
+    public GameObject panel;
+    public GameObject imgPenilaian, imgHasil;
+    public Text txtHasil,txtNomor;
     int indexSoal;
     int maxSoal;
     bool ambilsoal;
     char kunciJawaban;
 
+    bool isHasil;
+    private float durasi;
+    public float durasiPenilaian;
+
+    int jawabanBenar, jawabanSalah;
+    float nilai;
+    int nomorSoal;
+
     void Start()
     {
+        durasi = durasiPenilaian;
         soal = assetSoal.ToString().Split('#');
 
         soalBag = new string[soal.Length, 6];
@@ -68,28 +80,88 @@ public class SoalManager : MonoBehaviour
 
                 ambilsoal = false;
             }
+            nomorSoal++;
+            txtNomor.text = "Soal " + nomorSoal;
+            txtNomor.alignment = TextAnchor.MiddleCenter;
         }
     }
 
     public void Opsi(string opsiHuruf)
     {
+        checkJawaban(opsiHuruf[0]);
 
+        if(indexSoal == maxSoal - 1)
+        {
+            isHasil = true;
+        }
+        else
+        {
+            indexSoal++;
+            ambilsoal = true;
+        }
+
+        panel.SetActive(true);
+    }
+
+    private float HitungNilai()
+    {
+        return nilai = (float)jawabanBenar / maxSoal * 100;
     }
 
     private void checkJawaban(char huruf)
     {
+        string penilaian;
+
         if (huruf.Equals(kunciJawaban))
         {
-            print("benar");
+            penilaian = "Benar";
+            jawabanBenar++;
         }
         else
         {
-            print("salah");
+            penilaian = "Salah";
+            jawabanSalah++;
         }
+
+        txtPenilaian.text = penilaian;
+        txtPenilaian.alignment = TextAnchor.MiddleCenter;
     }
 
     void Update()
     {
-        
+        if (panel.activeSelf)
+        {
+            durasiPenilaian -= Time.deltaTime;
+
+            if (isHasil)
+            {
+                imgPenilaian.SetActive(true);
+                imgHasil.SetActive(false);
+
+                if(durasiPenilaian <= 0)
+                {
+                    txtHasil.text = "Jumlah Benar : " + jawabanBenar + "\nJawaban Salah : " + jawabanSalah + "\n\nSkor Akhir : " + HitungNilai();
+                    txtHasil.alignment = TextAnchor.MiddleLeft;
+
+                    imgPenilaian.SetActive(false);
+                    imgHasil.SetActive(true);
+
+                    durasiPenilaian = 0;
+                }
+            }
+            else
+            {
+                imgPenilaian.SetActive(true);
+                imgHasil.SetActive(false);
+
+                if (durasiPenilaian <= 0)
+                {
+                    panel.SetActive(false);
+                    durasiPenilaian = durasi;
+
+                    TampilkanSoal();
+                }
+            }
+        }
     }
 }
