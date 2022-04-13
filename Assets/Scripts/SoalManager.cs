@@ -28,6 +28,7 @@ public class SoalManager : MonoBehaviour
     int jawabanBenar, jawabanSalah;
     float nilai;
     int nomorSoal;
+    public Image soalGambar;
 
     void Start()
     {
