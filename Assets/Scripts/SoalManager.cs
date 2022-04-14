@@ -12,10 +12,11 @@ public class SoalManager : MonoBehaviour
     [SerializeField] private string[,] soalBag;
 
     public Text txtSoal, txtOpsiA, txtOpsiB, txtOpsiC, txtOpsiD;
-    public Text txtPenilaian;
+    public GameObject imgBenar, imgSalah;
     public GameObject panel;
     public GameObject imgPenilaian, imgHasil;
     public Text txtHasil,txtNomor;
+    public GameObject imgSoal1, imgSoal2, imgSoal3, imgSoal4, imgSoal5, imgSoal6, imgSoal7, imgSoal8, imgSoal9, imgSoal10;
     int indexSoal;
     int maxSoal;
     bool ambilsoal;
@@ -28,7 +29,6 @@ public class SoalManager : MonoBehaviour
     int jawabanBenar, jawabanSalah;
     float nilai;
     int nomorSoal;
-    public Image soalGambar;
 
     void Start()
     {
@@ -41,7 +41,154 @@ public class SoalManager : MonoBehaviour
 
         ambilsoal = true;
         TampilkanSoal();
-        print(soalBag[2, 2]);
+        gantiGambarSoal();
+    }
+
+    private void gantiGambarSoal()
+    {
+        if (nomorSoal == 1)
+        {
+            imgSoal1.SetActive(true);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(false);
+        }
+        else if (nomorSoal == 2)
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(true);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(false);
+        }
+        else if (nomorSoal == 3)
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(true);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(false);
+        }
+        else if (nomorSoal == 4)
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(true);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(false);
+        }
+        else if (nomorSoal == 5)
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(true);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(false);
+        }
+        else if (nomorSoal == 6)
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(true);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(false);
+        }
+        else if (nomorSoal == 7)
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(true);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(false);
+        }
+        else if (nomorSoal == 8)
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(true);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(false);
+        }
+        else if (nomorSoal == 9)
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(true);
+            imgSoal10.SetActive(false);
+        }
+        else if (nomorSoal == 10)
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(true);
+        }
+        else
+        {
+            imgSoal1.SetActive(false);
+            imgSoal2.SetActive(false);
+            imgSoal3.SetActive(false);
+            imgSoal4.SetActive(false);
+            imgSoal5.SetActive(false);
+            imgSoal6.SetActive(false);
+            imgSoal7.SetActive(false);
+            imgSoal8.SetActive(false);
+            imgSoal9.SetActive(false);
+            imgSoal10.SetActive(false);
+        }
     }
 
     private void OlahSoal()
@@ -111,21 +258,20 @@ public class SoalManager : MonoBehaviour
 
     private void checkJawaban(char huruf)
     {
-        string penilaian;
 
         if (huruf.Equals(kunciJawaban))
         {
-            penilaian = "Benar";
+            imgBenar.SetActive(true);
+            imgSalah.SetActive(false);
             jawabanBenar++;
         }
         else
         {
-            penilaian = "Salah";
+            imgSalah.SetActive(true);
+            imgBenar.SetActive(false);
             jawabanSalah++;
         }
 
-        txtPenilaian.text = penilaian;
-        txtPenilaian.alignment = TextAnchor.MiddleCenter;
     }
 
     void Update()
@@ -141,7 +287,7 @@ public class SoalManager : MonoBehaviour
 
                 if(durasiPenilaian <= 0)
                 {
-                    txtHasil.text = "Jumlah Benar : " + jawabanBenar + "\nJawaban Salah : " + jawabanSalah + "\n\nSkor Akhir : " + HitungNilai();
+                    txtHasil.text = "Jawaban Benar : " + jawabanBenar + "\nJawaban Salah : " + jawabanSalah + "\n\n\nSKOR AKHIR : " + HitungNilai();
                     txtHasil.alignment = TextAnchor.MiddleLeft;
 
                     imgPenilaian.SetActive(false);
@@ -164,5 +310,6 @@ public class SoalManager : MonoBehaviour
                 }
             }
         }
+        gantiGambarSoal();
     }
 }
